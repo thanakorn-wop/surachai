@@ -120,4 +120,12 @@ public class MainControoler {
         borrowuserreturn.deleteborrowreturn(devicesrequest);
                 
     }
+     @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public  MemberResponse deleteborrowreturn( )
+    {
+       MemberResponse data = new MemberResponse();
+       data.setName("heeek");
+       return data;
+                
+    }
 }
