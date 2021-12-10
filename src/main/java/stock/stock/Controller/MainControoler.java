@@ -5,8 +5,11 @@
  */
 package stock.stock.Controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,9 +38,9 @@ public class MainControoler {
     @Autowired
     LoginService loginservice;
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public List<LoginResponse> login(@RequestBody  LoginRequest loginrequest)
+    public ResponseEntity <List<LoginResponse>> login(@RequestBody  LoginRequest loginrequest)
     {   
-        
+        System.out.println("check = "+loginrequest);
 //        HolldayRequest qq = new HolldayRequest();
 //        String name = rquest.getName();
 //        qq.setName(name);
@@ -45,9 +48,10 @@ public class MainControoler {
 //        
 //         System.out.println("check1 "+name);
 //        data.save(name);
+
         
        
-        return loginservice.login(loginrequest);
+        return new ResponseEntity<>(loginservice.login(loginrequest),HttpStatus.OK);
     }
     @Autowired
     PopupService popupservice;
@@ -84,7 +88,7 @@ public class MainControoler {
       @Autowired
       MemberService memberservice;
      @RequestMapping(value = "/showmember",method = RequestMethod.GET)
-    public  List<MemberResponse> showmember( )
+     public  List<MemberResponse> showmember( )
     {
         return memberservice.showmember();
                 
@@ -120,12 +124,14 @@ public class MainControoler {
         borrowuserreturn.deleteborrowreturn(devicesrequest);
                 
     }
-     @RequestMapping(value = "/test",method = RequestMethod.GET)
-    public  MemberResponse deleteborrowreturn( )
-    {
-       MemberResponse data = new MemberResponse();
-       data.setName("heeek");
-       return data;
-                
-    }
+//     @RequestMapping(value = "/test",method = RequestMethod.GET)
+//    public  MemberResponse deleteborrowreturn( )
+//    {
+//       MemberResponse data = new MemberResponse();
+//       data.setName("heeek");
+//       return data;
+//                
+//    }
+    
+
 }
