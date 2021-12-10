@@ -124,14 +124,39 @@ public class MainControoler {
         borrowuserreturn.deleteborrowreturn(devicesrequest);
                 
     }
-//     @RequestMapping(value = "/test",method = RequestMethod.GET)
-//    public  MemberResponse deleteborrowreturn( )
-//    {
-//       MemberResponse data = new MemberResponse();
-//       data.setName("heeek");
-//       return data;
-//                
-//    }
+     @RequestMapping(value = "/test",method = RequestMethod.GET)
+    public  MemberResponse deleteborrowreturn( )
+    {
+       MemberResponse data = new MemberResponse();
+       data.setName("heeek");
+       return data;
+                
+    }
+    
+    
+     @RequestMapping(value = "/testlogin",method = RequestMethod.POST)
+    public ResponseEntity <List<LoginResponse>> test(@RequestBody  LoginRequest loginrequest)
+    {   
+        System.out.println("check = "+loginrequest);
+        List<LoginResponse> data = new ArrayList<>();
+        LoginResponse aa = new LoginResponse();
+        aa.setUsername(loginrequest.getUsername());
+        aa.setPassword(loginrequest.getPassword());
+       data.add(aa);
+                
+//        HolldayRequest qq = new HolldayRequest();
+//        String name = rquest.getName();
+//        qq.setName(name);
+//        database.Data(qq.getName());
+//        
+//         System.out.println("check1 "+name);
+//        data.save(name);
+
+        
+       
+        return new ResponseEntity<>(data,HttpStatus.OK);
+    }
+    
     
 
 }
