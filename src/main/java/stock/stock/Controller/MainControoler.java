@@ -138,11 +138,11 @@ public class MainControoler {
     public ResponseEntity <List<LoginResponse>> test(@RequestBody  LoginRequest loginrequest)
     {   
         System.out.println("check = "+loginrequest);
-        List<LoginResponse> data = new ArrayList<>();
-        LoginResponse aa = new LoginResponse();
-        aa.setUsername(loginrequest.getUsername());
-        aa.setPassword(loginrequest.getPassword());
-       data.add(aa);
+//        List<LoginResponse> data = new ArrayList<>();
+//        LoginResponse aa = new LoginResponse();
+//        aa.setUsername(loginrequest.getUsername());
+//        aa.setPassword(loginrequest.getPassword());
+//       data.add(aa);
                 
 //        HolldayRequest qq = new HolldayRequest();
 //        String name = rquest.getName();
@@ -154,7 +154,7 @@ public class MainControoler {
 
         
        
-        return new ResponseEntity<>(data,HttpStatus.OK);
+        return new ResponseEntity<>(loginservice.login(loginrequest),HttpStatus.OK);
     }
     
     
