@@ -38,7 +38,7 @@ public class MainControoler {
     @Autowired
     LoginService loginservice;
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public ResponseEntity <List<LoginResponse>> login(@RequestBody  LoginRequest loginrequest)
+    public LoginResponse login(@RequestBody  LoginRequest loginrequest)
     {   
         System.out.println("check = "+loginrequest);
 //        HolldayRequest qq = new HolldayRequest();
@@ -51,7 +51,7 @@ public class MainControoler {
 
         
        
-        return new ResponseEntity<>(loginservice.login(loginrequest),HttpStatus.OK);
+        return loginservice.login(loginrequest);
     }
     @Autowired
     PopupService popupservice;
