@@ -28,7 +28,7 @@ import stock.stock.Response.MemberResponse;
 @Repository
 public class DatabaseRepo extends Basedata {
 
-    public LoginResponse login(LoginRequest loginrequest) {
+    public List<LoginResponse> login(LoginRequest loginrequest) {
 
         List<LoginResponse> data = new ArrayList<>();
 //         List<UserData> arr = new ArrayList<>();
@@ -53,7 +53,7 @@ public class DatabaseRepo extends Basedata {
             System.out.println("no data");
         }
 
-        return data1;
+        return data;
     }
 
     public List<MemberResponse> PopUpAdduserdevices() {
