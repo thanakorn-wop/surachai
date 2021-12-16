@@ -28,7 +28,7 @@ import stock.stock.Response.MemberResponse;
 @Repository
 public class DatabaseRepo extends Basedata {
 
-    public List<LoginResponse> login(LoginRequest loginrequest) {
+    public LoginResponse login(LoginRequest loginrequest) {
 
         List<LoginResponse> data = new ArrayList<>();
 //         List<UserData> arr = new ArrayList<>();
@@ -42,15 +42,18 @@ public class DatabaseRepo extends Basedata {
         para.add(loginrequest.getPassword());
 //         arr = jdbcTemplate.query(user,para.toArray(),FIND_MEMBER);
         data = jdbcTemplate.query(user, para.toArray(), FIND_USER);
+         LoginResponse data1 = new LoginResponse();
         if (data.size() > 0) {
             System.out.println("your username = " + loginrequest.getUsername());
             System.out.println("your pass = " + loginrequest.getPassword());
+             data1.setUsername(loginrequest.getUsername());
+            data1.setPassword(loginrequest.getPassword());
 
         } else {
             System.out.println("no data");
         }
 
-        return data;
+        return data1;
     }
 
     public List<MemberResponse> PopUpAdduserdevices() {
