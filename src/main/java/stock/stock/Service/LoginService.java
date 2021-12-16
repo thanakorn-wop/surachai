@@ -21,7 +21,7 @@ public class LoginService {
     @Autowired
     DatabaseRepo databaserepo;
     
-    public LoginResponse login(LoginRequest loginrequest)
+    public List<LoginResponse> login(LoginRequest loginrequest)
     {
         return databaserepo.login(loginrequest);
     }
