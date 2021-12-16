@@ -134,28 +134,28 @@ public class MainControoler {
     }
     
     
-     @RequestMapping(value = "/testlogin",method = RequestMethod.POST)
-    public ResponseEntity <List<LoginResponse>> test(@RequestBody  LoginRequest loginrequest)
-    {   
-        System.out.println("check = "+loginrequest);
-//        List<LoginResponse> data = new ArrayList<>();
-//        LoginResponse aa = new LoginResponse();
-//        aa.setUsername(loginrequest.getUsername());
-//        aa.setPassword(loginrequest.getPassword());
-//       data.add(aa);
+//      @RequestMapping(value = "/testlogin",method = RequestMethod.POST)
+//     public ResponseEntity <List<LoginResponse>> test(@RequestBody  LoginRequest loginrequest)
+//     {   
+//         System.out.println("check = "+loginrequest);
+// //        List<LoginResponse> data = new ArrayList<>();
+// //        LoginResponse aa = new LoginResponse();
+// //        aa.setUsername(loginrequest.getUsername());
+// //        aa.setPassword(loginrequest.getPassword());
+// //       data.add(aa);
                 
-//        HolldayRequest qq = new HolldayRequest();
-//        String name = rquest.getName();
-//        qq.setName(name);
-//        database.Data(qq.getName());
-//        
-//         System.out.println("check1 "+name);
-//        data.save(name);
+// //        HolldayRequest qq = new HolldayRequest();
+// //        String name = rquest.getName();
+// //        qq.setName(name);
+// //        database.Data(qq.getName());
+// //        
+// //         System.out.println("check1 "+name);
+// //        data.save(name);
 
         
        
-        return new ResponseEntity<>(loginservice.login(loginrequest),HttpStatus.OK);
-    }
+//         return new ResponseEntity<>(loginservice.login(loginrequest),HttpStatus.OK);
+//     }
     
     
 
