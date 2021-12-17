@@ -38,7 +38,7 @@ public class MainControoler {
     @Autowired
     LoginService loginservice;
     @RequestMapping(value = "/login",method = RequestMethod.POST)
-    public LoginResponse login(@RequestBody  LoginRequest loginrequest)
+    public List<LoginResponse> login(@RequestBody  LoginRequest loginrequest)
     {   
         System.out.println("check = "+loginrequest);
 //        HolldayRequest qq = new HolldayRequest();
