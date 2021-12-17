@@ -28,7 +28,7 @@ import stock.stock.Response.MemberResponse;
 @Repository
 public class DatabaseRepo extends Basedata {
 
-    public LoginResponse login(LoginRequest loginrequest) {
+    public List<LoginResponse> login(LoginRequest loginrequest) {
 
         List<LoginResponse> data = new ArrayList<>();
 //         List<UserData> arr = new ArrayList<>();
@@ -50,7 +50,7 @@ public class DatabaseRepo extends Basedata {
             System.out.println("your pass = " + data.get(0).getPassword());
              data1.setUsername(loginrequest.getUsername());
             data1.setPassword(loginrequest.getPassword());
-            return new ResponseEntity <List<LoginResponse>> (data,HttpStatus.OK);
+            return data
 
         } else {
             System.out.println("no data");
