@@ -44,16 +44,19 @@ public class DatabaseRepo extends Basedata {
         data = jdbcTemplate.query(user, para.toArray(), FIND_USER);
          LoginResponse data1 = new LoginResponse();
         if (data.size() > 0) {
-            System.out.println("your username = " + loginrequest.getUsername());
-            System.out.println("your pass = " + loginrequest.getPassword());
+//             System.out.println("your username = " + data.get(0).get);
+//             System.out.println("your pass = " + loginrequest.getPassword());
+            System.out.println("your username = " + data.get(0).getUsername());
+            System.out.println("your pass = " + data.get(0).getPassword());
              data1.setUsername(loginrequest.getUsername());
             data1.setPassword(loginrequest.getPassword());
+            return new ResponseEntity <List<LoginResponse>> (data,HttpStatus.OK);
 
         } else {
             System.out.println("no data");
         }
 
-        return data1;
+        return null;
     }
 
     public List<MemberResponse> PopUpAdduserdevices() {
